@@ -49,7 +49,7 @@ public class FunctionA {
         float salary = calculateSalary(hoursWorked,rate);
         double bonus = calculateBonus(salary,koef);
         System.out.println(name + "," + position);
-        System.out.printf("Заработная плата: " + "%.2f" + value + "\n", salary);
+        System.out.printf("Заработная плата: " + "%.2f" + value, salary);
         System.out.printf("Премия: " + "%.2f" + value + "\n", bonus);
         System.out.println(" ");
     }

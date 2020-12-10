@@ -1,47 +1,63 @@
 package task06;
 
+/**
+ * @author Horoshko Maryna
+ * @version 2.0
+ */
+
 import java.util.ArrayList;
 
 public class ProductList02 {
+
     public static void main(String[] args) {
+        ArrayList<String> goods = new ArrayList<>();
+        goods.add("Киви");
+        goods.add("Мандарин");
+        goods.add("Банан");
+        goods.add("Картофель");
+        goods.add("Морковь");
+        goods.add("Капуста");
+        goods.add("Пион");
+        goods.add("Роза");
+        goods.add("Орхидея");
 
-        ArrayList<String> fruits = new ArrayList<>();
-        fruits.add("Киви");
-        fruits.add("Мандарин");
-        fruits.add("Банан");
-
-        ArrayList<String> vegetables = new ArrayList<>();
-        vegetables.add("Картофель");
-        vegetables.add("Морковь");
-        vegetables.add("Капуста");
-
-        ArrayList<String> flowers = new ArrayList<>();
-        flowers.add("Пион");
-        flowers.add("Роза");
-        flowers.add("Орхидея");
-
-        ArrayList<String> allElements = new ArrayList<>();
-        allElements.addAll(vegetables);
-        allElements.addAll(flowers);
-        allElements.addAll(fruits);
-
-        printAll(allElements);
-        printElements(allElements);
-
+        print(goods);
+        mixGoods(goods);
+        printMix(goods);
+        printElements(goods);
     }
 
-    private static void printAll(ArrayList<String> allElements) {
-        System.out.println();
-        allElements.forEach(System.out::println);
+    private static void print(ArrayList<String> goods) {
+
+        System.out.println("Первоначальный список: " + goods);
     }
 
-    public static void printElements(ArrayList<String>allElements){
-        System.out.println();
-        System.out.println("Вывод елементов №3-6: ");
-        System.out.println(allElements.subList(3,6));
+    private static void mixGoods(ArrayList<String> goods) {
+        int lastIndex = goods.size();
 
+        String temp1;
+        for( int i = 8 ;  i < lastIndex ; i++) {
+            temp1 = goods.remove(0);
+            goods.add(i , temp1);
+        }
+        String temp2;
+        for( int i = 8 ;  i < lastIndex ; i++){
+            temp2 = goods.remove(0);
+            goods.add(i , temp2);
+        }
+        String temp3;
+        for( int i = 8 ;  i < lastIndex ; i++){
+            temp3 = goods.remove(0);
+            goods.add(i , temp3);
+        }
     }
 
+    private static void printMix(ArrayList<String> goods) {
 
+        System.out.println("Модифицированный список: " + goods);
+    }
+
+    private static void printElements(ArrayList<String> goods) {
+        System.out.println("Вывод елементов №3-6: " + goods.subList(2,6));
+    }
 }
-

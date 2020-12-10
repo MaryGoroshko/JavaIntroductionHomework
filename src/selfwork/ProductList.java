@@ -1,6 +1,7 @@
-package task06;
+package selfwork;
 /**
  * @author Horoshko Maryna
+ * @version 1.0
  */
 
 import java.util.ArrayList;
@@ -9,21 +10,28 @@ import java.util.List;
 
 public class ProductList {
 
-    public static void main(String[] args) {
+     public static void main(String[] args) {
 
         ArrayList<String> fruits = getGoods("Киви", "Мандарин", "Банан");
         ArrayList<String> vegetables = getGoods("Картофель", "Морковь", "Капуста");
         ArrayList<String> flowers = getGoods("Пион", "Роза", "Орхидея");
 
-        ArrayList<String> allElements = new ArrayList<>();
-        allElements.addAll(vegetables);
-        allElements.addAll(flowers);
-        allElements.addAll(fruits);
+        ArrayList<String> allElements01 = new ArrayList<>();
+        allElements01.addAll(fruits);
+        allElements01.addAll(vegetables);
+        allElements01.addAll(flowers);
 
-        print(vegetables,flowers,fruits);
-        printElements(allElements);
+        ArrayList<String> allElements02 = new ArrayList<>();
+        allElements02.addAll(vegetables);
+        allElements02.addAll(flowers);
+        allElements02.addAll(fruits);
 
+        print01(fruits,vegetables,flowers);
+        print02(vegetables,flowers,fruits);
+        printElements(allElements02);
     }
+
+
 
     private static ArrayList<String> getGoods(String... params) {
         ArrayList<String> result = new ArrayList<>();
@@ -31,7 +39,14 @@ public class ProductList {
         return result;
     }
 
-    public static void print(List<String> vegetables, List<String> flowers, List<String> fruits) {
+    private static void print01(List<String>fruits , List<String>vegetables , List<String>flowers) {
+        printPart(fruits,"Фрукты:");
+        printPart(vegetables, "Овощи:");
+        printPart(flowers, "Цветы:");
+
+     }
+
+    public static void print02(List<String> vegetables, List<String> flowers, List<String> fruits) {
         printPart(vegetables, "Овощи:");
         printPart(flowers, "Цветы:");
         printPart(fruits,"Фрукты:");
