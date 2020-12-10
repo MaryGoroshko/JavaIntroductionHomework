@@ -1,4 +1,4 @@
-package selfwork.swork01;
+package classwork.swork01;
 
 //**
 //* @author Horoshko Maryna

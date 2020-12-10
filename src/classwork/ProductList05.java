@@ -1,4 +1,4 @@
-package selfwork;
+package classwork;
 
 import java.util.ArrayList;
 import java.util.Collections;
